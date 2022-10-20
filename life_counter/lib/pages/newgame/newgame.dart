@@ -16,12 +16,12 @@ class NewGame extends StatelessWidget {
     double imgHeight = (MediaQuery.of(context).size.height / 2) - 5;
     double dividerWidth = MediaQuery.of(context).size.width * 0.9;
 
-    return Material(
-      child: Column(
+    return Scaffold(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          MaterialButton(
+          ElevatedButton(
             onPressed: () => handlePVPAction(context),
             child: SvgPicture.asset(
               'assets/icons/tabletop-players.svg',
@@ -37,7 +37,7 @@ class NewGame extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
           ),
-          MaterialButton(
+          ElevatedButton(
             onPressed: () => {},
             child: SvgPicture.asset(
               'assets/icons/round-table.svg',

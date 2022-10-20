@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:life_counter/components/logo/app_background.dart';
 import 'package:life_counter/pages/board_select/board_select.dart';
 import 'package:life_counter/pages/game/game.dart';
 import 'package:life_counter/pages/home/home.dart';
@@ -37,15 +38,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Legion Life Counter',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.white,
+        colorScheme: const ColorScheme.dark(
+          primary: Color(0xFF460000),
+          onPrimary: Colors.white,
+        ),
+        scaffoldBackgroundColor: Colors.transparent,
       ),
       initialRoute: '/home',
       onGenerateRoute: (settings) => handleGenerateRoutes(settings),
       routes: {
-        Routes.home: (context) => const Home(),
-        Routes.newGame: (context) => const NewGame(),
+        Routes.home: (context) => const AppBackground(child: Home()),
+        Routes.newGame: (context) => const AppBackground(child: NewGame()),
       },
     );
   }

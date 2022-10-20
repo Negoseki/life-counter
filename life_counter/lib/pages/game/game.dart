@@ -25,8 +25,8 @@ class Game extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Column(
+    return Scaffold(
+      body: Column(
         children: playerPositions
             .map(
               (list) => Expanded(

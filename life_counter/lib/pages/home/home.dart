@@ -10,23 +10,45 @@ class Home extends StatelessWidget {
     Navigator.of(context).pushNamed(Routes.newGame);
   }
 
+  Widget homeButton(String name, Function()? callback) {
+    return ElevatedButton(
+      onPressed: callback,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          name,
+          style: const TextStyle(fontSize: 28),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Material(
-        child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const Logo(),
-        MaterialButton(
-          onPressed: () => handleNewGame(context),
-          child: const Text('Novo Jogo'),
-        ),
-        MaterialButton(
-          onPressed: () => {},
-          child: const Text('Settings'),
-        )
-      ],
+    return Scaffold(
+        body: Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Logo(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              homeButton(
+                'Novo Jogo',
+                () => handleNewGame(context),
+              ),
+              const Padding(padding: EdgeInsets.all(16)),
+              homeButton(
+                'Ajustes',
+                () => handleNewGame(context),
+              ),
+            ],
+          ),
+        ],
+      ),
     ));
   }
 }

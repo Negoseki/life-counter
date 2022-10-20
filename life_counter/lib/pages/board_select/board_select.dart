@@ -50,19 +50,19 @@ class BoardSelect extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Column(
+    return Scaffold(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              MaterialButton(
+              ElevatedButton(
                 onPressed: () => handlePositionSelect(context, false),
                 child: createPosition(positionsNormal),
               ),
-              MaterialButton(
+              ElevatedButton(
                   onPressed: () => handlePositionSelect(context, true),
                   child: createPosition(positionsAlternate)),
             ],
