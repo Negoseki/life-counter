@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:life_counter/pages/game/game.dart';
+import 'package:life_counter/routes/route_arguments.dart';
 import 'package:life_counter/routes/routes.dart';
 import 'package:life_counter/utils/players_position.dart';
 import 'package:life_counter/utils/position_by_players.dart';
@@ -45,7 +46,9 @@ class BoardSelect extends StatelessWidget {
   void handlePositionSelect(BuildContext context, bool alternate) {
     Navigator.of(context).pushNamedAndRemoveUntil(
         Routes.game, (route) => route.isFirst,
-        arguments: GameArguments(players, alternate: alternate));
+        arguments: GameArguments(alternate
+            ? positionByPlayers[players]!.alternate
+            : positionByPlayers[players]!.normal));
   }
 
   @override

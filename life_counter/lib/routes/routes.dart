@@ -4,4 +4,5 @@ class Routes {
   static const String boardSelect = '/board-select';
   static const String home = '/home';
   static const String settings = '/settings';
+  static const String playerSize = '/player-size';
 }

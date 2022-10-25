@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:life_counter/components/counter/counter.dart';
 import 'package:life_counter/components/logo/logo.dart';
 import 'package:life_counter/routes/routes.dart';
 
@@ -37,12 +36,12 @@ class Home extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               homeButton(
-                'Novo Jogo',
+                'Iniciar',
                 () => handleNewGame(context),
               ),
               const Padding(padding: EdgeInsets.all(16)),
               homeButton(
-                'Ajustes',
+                'Configurar',
                 () => handleNewGame(context),
               ),
             ],

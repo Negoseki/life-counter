@@ -32,7 +32,10 @@ class _CounterState extends State<Counter> {
           IconButton(
               onPressed: () => handleLifeButton(-1),
               icon: const Icon(Icons.remove)),
-          Text(life.toString()),
+          Text(
+            life.toString(),
+            style: const TextStyle(fontSize: 128),
+          ),
           IconButton(
               onPressed: () => handleLifeButton(1),
               icon: const Icon(Icons.add)),
